@@ -45,24 +45,27 @@ export class LeafletHexbinDirective
 
 		// Fire the ready event
 		this.layerReady.emit(this.hexbinLayer);
+    const isIE11 = !!window['MSInputMethodContext'] && !!document['documentMode'];
 
-		// register for the hexbin events
-		this.hexbinLayer.dispatch().on('mouseover', (p: any) => {
-			this.zone.run(() => {
-				this.hexbinMouseover.emit(p);
-			});
+    if (!isIE11) {
+      // register for the hexbin events
+      this.hexbinLayer.dispatch().on('mouseover', (p: any) => {
+        this.zone.run(() => {
+          this.hexbinMouseover.emit(p);
+        });
 
-		});
-		this.hexbinLayer.dispatch().on('mouseout', (p: any) => {
-			this.zone.run(() => {
-				this.hexbinMouseout.emit(p);
-			});
-		});
-		this.hexbinLayer.dispatch().on('click', (p: any) => {
-			this.zone.run(() => {
-				this.hexbinClick.emit(p);
-			});
-		});
+      });
+      this.hexbinLayer.dispatch().on('mouseout', (p: any) => {
+        this.zone.run(() => {
+          this.hexbinMouseout.emit(p);
+        });
+      });
+      this.hexbinLayer.dispatch().on('click', (p: any) => {
+        this.zone.run(() => {
+          this.hexbinClick.emit(p);
+        });
+      });
+    }
 
 		this.hexbinLayer.addTo(map);
 
