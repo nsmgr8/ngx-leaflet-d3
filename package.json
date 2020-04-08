@@ -29,7 +29,11 @@
 	},
 	"files": [
 		"dist",
-		"src"
+		"src",
+    "tslint.json",
+    "tsconfig.json",
+    "tsconfig-aot.json",
+    "webpack.config.json"
 	],
 	"peerDependencies": {
 		"@angular/core": ">=8",
