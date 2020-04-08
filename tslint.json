@@ -2,8 +2,9 @@
 	"extends": "tslint:recommended",
 	"rules": {
 
+    "align": false,
 		"array-type": false,
-		"indent": [ true, "tabs" ],
+		"indent": [ false, "tabs" ],
 		"max-line-length": false,
 		"member-access": false,
 		"member-ordering": [ true, { "order": "fields-first" } ],

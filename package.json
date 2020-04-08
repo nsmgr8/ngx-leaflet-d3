@@ -33,7 +33,8 @@
     "tslint.json",
     "tsconfig.json",
     "tsconfig-aot.json",
-    "webpack.config.json"
+    "webpack.config.json",
+    "rollup.config.js"
 	],
 	"peerDependencies": {
 		"@angular/core": ">=8",
